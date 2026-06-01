@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajay Krishna — Banking domain + AI product</title>
+<meta name="description" content="Banking-IT domain expert (15+ years across European banks) moving into AI product management — and shipping: a multi-bank Open Banking prototype with a GenAI transaction categorizer.">
+<style>
+  :root{
+    --bg:#0e1320; --panel:#161d2e; --panel2:#1b2436; --line:#2a3650;
+    --ink:#eef2fb; --mut:#9fb0cf; --soft:#c7d2e8;
+    --accent:#36d6c3; --accent2:#6aa6ff; --accentink:#04221e;
+    --max:1040px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:linear-gradient(180deg,#0b0f1a,#0e1320 240px);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);
+    background:rgba(11,15,26,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  nav .nm{font-weight:700;letter-spacing:.2px}
+  nav .lk{display:flex;gap:20px;font-size:14px}
+  nav .lk a{color:var(--soft)}
+  @media(max-width:620px){nav .lk{display:none}}
+  /* hero */
+  header.hero{padding:64px 0 30px}
+  .eyebrow{color:var(--accent);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px}
+  h1{font-size:clamp(30px,5.2vw,50px);line-height:1.08;margin:14px 0 0;letter-spacing:-.5px}
+  h1 .hl{color:var(--accent)}
+  .lede{color:var(--soft);font-size:clamp(16px,2.1vw,19px);max-width:760px;margin:18px 0 0}
+  .meta{color:var(--mut);font-size:14px;margin-top:14px}
+  .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:11px 18px;border-radius:10px;font-weight:600;font-size:14.5px;border:1px solid var(--line)}
+  .btn.p{background:var(--accent);color:var(--accentink);border-color:var(--accent)}
+  .btn.s{background:transparent;color:var(--ink)}
+  .btn:hover{text-decoration:none;filter:brightness(1.05)}
+  /* stat strip */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 6px}
+  @media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px}
+  .stat .n{font-size:26px;font-weight:800;color:var(--accent)}
+  .stat .l{color:var(--mut);font-size:12.5px;margin-top:3px}
+  /* sections */
+  section{padding:46px 0;border-top:1px solid var(--line)}
+  h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+  .h2sub{font-size:clamp(21px,3vw,27px);font-weight:700;margin:0 0 22px;letter-spacing:-.3px}
+  p{color:var(--soft)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.grid3{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{margin:0 0 8px;font-size:17px}
+  .card p{margin:0;font-size:14.5px;color:var(--mut)}
+  /* flagship */
+  .build{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:26px}
+  .tagline{color:var(--accent);font-weight:600;font-size:13px;letter-spacing:.06em}
+  .build h3{font-size:clamp(19px,2.6vw,24px);margin:6px 0 10px;letter-spacing:-.3px}
+  .build .note{font-size:13px;color:var(--mut);border-left:2px solid var(--accent);padding-left:12px;margin:14px 0}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .pill{font-size:12.5px;color:var(--soft);background:#101728;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+  .bgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;margin-top:18px}
+  @media(max-width:760px){.bgrid{grid-template-columns:1fr}}
+  ul.clean{margin:10px 0 0;padding:0;list-style:none}
+  ul.clean li{position:relative;padding-left:20px;margin:9px 0;color:var(--soft);font-size:14.5px}
+  ul.clean li::before{content:"▹";position:absolute;left:0;color:var(--accent)}
+  .mini{font-size:12.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.12em;margin:0 0 6px}
+  /* timeline */
+  .job{display:grid;grid-template-columns:180px 1fr;gap:18px;padding:18px 0;border-top:1px dashed var(--line)}
+  .job:first-of-type{border-top:none}
+  @media(max-width:680px){.job{grid-template-columns:1fr;gap:6px}}
+  .job .when{color:var(--mut);font-size:13.5px}
+  .job .role{font-weight:700}
+  .job .org{color:var(--soft);font-size:14px;margin-bottom:6px}
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.skills{grid-template-columns:1fr}}
+  .skills .card p{color:var(--soft);font-size:14px}
+  .certs{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .cert{font-size:13px;color:var(--soft);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 13px}
+  /* contact */
+  .contact .links{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+  footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--mut);font-size:13px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <span class="nm">Ajay Krishna</span>
+  <span class="lk">
+    <a href="#build">The build</a>
+    <a href="#edge">What I bring</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </span>
+</div></div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Banking domain × AI product</div>
+  <h1>I know how banks' payment systems<br>actually work — and I <span class="hl">ship</span>.</h1>
+  <p class="lede">15+ years inside European banks' payments and Open Banking systems, now building toward AI product management. Not just specs: I designed and shipped a multi-bank Open Banking prototype with a GenAI transaction categorizer that cut unclassified transactions by <strong>~80%</strong> on its evaluation set.</p>
+  <p class="meta">Product Manager, Service Operations (PSD2 / Open Banking) · Munich, Germany</p>
+  <div class="cta">
+    <a class="btn p" href="#build">See the build</a>
+    <a class="btn s" href="#contact">Get in touch</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">~80%↓</div><div class="l">unclassified transactions, GenAI categorizer</div></div>
+    <div class="stat"><div class="n">5</div><div class="l">European banks integrated (sandbox APIs)</div></div>
+    <div class="stat"><div class="n">15+ yrs</div><div class="l">banking IT across top-tier EU banks</div></div>
+    <div class="stat"><div class="n">9</div><div class="l">countries of Open Banking, bank-side</div></div>
+  </div>
+</div></header>
+
+<!-- FLAGSHIP BUILD -->
+<section id="build"><div class="wrap">
+  <h2>The flagship build</h2>
+  <div class="h2sub">A multi-bank Open Banking TPP with a shipped GenAI feature</div>
+  <div class="build">
+    <div class="tagline">SELF-DIRECTED PROTOTYPE · BUILT WITH CLAUDE CODE AS PAIR-PROGRAMMER</div>
+    <h3>Open Banking aggregation + a three-tier GenAI transaction categorizer</h3>
+    <p>After years managing Open Banking from the <em>bank's</em> side, I wanted the <em>TPP developer's</em> side — where the friction is, and where AI actually moves the needle. So I built it. I authored the PRD and made every product, architecture, and integration decision; Claude Code wrote the implementation under my direction. A rare, hands-on test of using AI as a product-development partner.</p>
+
+    <div class="bgrid">
+      <div>
+        <div class="mini">What it does</div>
+        <ul class="clean">
+          <li>Integrates <strong>five European banks at the sandbox-API level</strong> (Nordea, Commerzbank, UniCredit, Deutsche Bank, ING) over Berlin Group / NextGenPSD2 — OAuth2, mTLS, and HTTP Request Signatures (ING the hardest: two key-pairs, two keyId formats).</li>
+          <li>Multi-tenant Flask app with per-user bank connections, multi-currency aggregation via live ECB rates, consent + SCA flows.</li>
+          <li>Ships a <strong>GenAI transaction categorizer</strong> — a three-tier hybrid router: hand-curated overrides → SQLite cache → a local LLM (Ollama + Qwen 2.5 3B) returning structured JSON <code>{category, confidence, reasoning}</code>.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="mini">What shipped</div>
+        <ul class="clean">
+          <li><strong>Unclassified transactions cut ~80%</strong> — from 217 to 42 of 1,303 — measured on an evaluation harness comparing rule-based vs AI categorization.</li>
+          <li>Caught a real <strong>LLM bias bug</strong> in evaluation (merchant names mis-routed to the wrong category) and fixed it through the override layer — the durable "LLM + overrides" pattern.</li>
+          <li>Splunk-shaped structured JSON logging on every sync event — the same observability discipline I apply in production, now on the TPP side.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note">Honest scope: a working prototype on banks' <em>sandbox</em> APIs, built as a learning vehicle and AI-PM portfolio piece — and the source of a genuinely dual bank-side + TPP-side view of Open Banking that's rare in the market.</p>
+
+    <div class="pills">
+      <span class="pill">Python / Flask</span><span class="pill">Berlin Group / NextGenPSD2</span>
+      <span class="pill">OAuth2 · mTLS · HTTP Request Signatures</span><span class="pill">Ollama + Qwen 2.5 3B</span>
+      <span class="pill">Structured JSON output</span><span class="pill">Prompt caching (SQLite)</span>
+      <span class="pill">Evaluation harness</span><span class="pill">PRD-first</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- WHAT I BRING -->
+<section id="edge"><div class="wrap">
+  <h2>What I bring</h2>
+  <div class="h2sub">Domain depth and a shipped AI feature — the combination is the point</div>
+  <div class="grid3">
+    <div class="card">
+      <h3>Builder</h3>
+      <p>I don't just write requirements — I shipped a GenAI feature with a real evaluation harness, a documented model-failure bug and fix, and structured-output discipline. PRD-first, metric-out.</p>
+    </div>
+    <div class="card">
+      <h3>Domain expert</h3>
+      <p>15+ years across UniCredit, Nordea, and GE Capital/Bank BPH; Open Banking across 9 countries from the bank side and a TPP from the developer side. Most AI-PM candidates at banks can't match the domain depth.</p>
+    </div>
+    <div class="card">
+      <h3>Operator in regulated environments</h3>
+      <p>Audit support, P&L and sourcing ownership, SLA turnarounds, and frameworks adopted org-wide. I know how to get things done inside complex, compliance-bound organisations.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- EXPERIENCE -->
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <div class="h2sub">Top-tier European banks, 2010–present</div>
+
+  <div class="job">
+    <div class="when">Sep 2019 – present<br>Munich, Germany</div>
+    <div>
+      <div class="role">Product Manager, Service Operations (PSD2 / Open Banking)</div>
+      <div class="org">UniCredit</div>
+      <ul class="clean">
+        <li>Designed a Splunk-based Open Banking API monitoring &amp; alerting framework across 9 European countries that cut regulatory incidents <strong>99%</strong> — now the bank's standard approach (operational / SRE craft, and the credibility foundation under everything else).</li>
+        <li>Used Microsoft Copilot in my own workflow to automate Open Banking ticket triage, impact analysis, and response drafting — <strong>34%</strong> faster personal response/resolution. (An org-wide tool I applied to my work — conviction that AI has real leverage in regulated operations.)</li>
+        <li>Drove the technical case to migrate the Open Banking developer portal to a new API-gateway platform and aligned 9 country entities behind it; recommendation approved by senior management.</li>
+        <li>Contribute IT-side input to the bank's PSD3 / PSR feasibility work, including the Verification-of-Payee component.</li>
+        <li>Supported the 2024 Hungarian National Bank Open Banking audit from the IT side — furnished technical evidence and drafted answers across ~20 areas, surfacing a compliance gap with a remediation plan; no significant findings.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2016 – 2019<br>Poland</div>
+    <div>
+      <div class="role">Senior IT Service Manager · Service Transition Manager</div>
+      <div class="org">Nordea Bank</div>
+      <ul class="clean">
+        <li>Held P&amp;L for software products in the portfolio; drove the commercial-model change from Time &amp; Material to Managed Services with a parallel vendor switch — then diagnosed post-cutover SLA breaches and recovered to a <strong>36%</strong> regulatory-reporting SLA improvement.</li>
+        <li>Built the Nordea Service Transition Framework from scratch — adopted as the organisational standard — and ran 5 large-scale service transitions end-to-end, on time and on budget.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2010 – 2016<br>Gdańsk · Bangalore</div>
+    <div>
+      <div class="role">Service Delivery Lead (deployed to GE Capital / Bank BPH)</div>
+      <div class="org">Attra Infotech</div>
+      <ul class="clean">
+        <li>Built a 24×7 banking-application support operation from zero around an <strong>8+ member multicultural team</strong> — ITIL processes, SLAs/KPIs, on-call coverage; sustained beyond contract.</li>
+        <li>Led requirements and scoping for Mastercard &amp; Visa scheme-compliance projects, VisionPLUS®, and FICO® Falcon® implementations — foundational card-payments and ISO 8583 expertise.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- SKILLS -->
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="h2sub">Where domain, AI, and delivery meet</div>
+  <div class="skills">
+    <div class="card">
+      <h3>AI &amp; technical</h3>
+      <p>GenAI feature design · local LLMs (Ollama, Qwen) · structured JSON output · prompt engineering · evaluation harnesses · Python / Flask · SQL · reading code &amp; engaging engineering teams (mainframe background: z/OS, COBOL, JCL).</p>
+    </div>
+    <div class="card">
+      <h3>Payments &amp; Open Banking</h3>
+      <p>PSD2 / Open Banking (bank-side &amp; TPP-side) · Berlin Group / NextGenPSD2 · OAuth2 · mTLS · HTTP Request Signatures · consent &amp; SCA · ISO 8583 · card-scheme compliance · regulatory reporting &amp; audit readiness.</p>
+    </div>
+    <div class="card">
+      <h3>Operations &amp; governance</h3>
+      <p>ITIL service management · SLA/KPI frameworks · vendor selection &amp; sourcing · P&amp;L &amp; cost control · service transition · incident/problem/change · Splunk · ServiceNow · JIRA · cross-functional delivery without formal authority.</p>
+    </div>
+  </div>
+  <div style="margin-top:22px">
+    <div class="mini">Certifications &amp; education</div>
+    <div class="certs">
+      <span class="cert">AI For Everyone — DeepLearning.AI (2026)</span>
+      <span class="cert">ITIL® V3 Expert</span>
+      <span class="cert">PMP® (through 2027)</span>
+      <span class="cert">Certified SAFe® Scrum Master</span>
+      <span class="cert">B.E. Electronics &amp; Communication (First Class w/ Distinction)</span>
+      <span class="cert">German — telc B1</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <div class="h2sub">Always glad to talk banking, payments, and AI products</div>
+  <p>Based in Munich, Germany.</p>
+  <div class="links">
+    <a class="btn p" href="mailto:ajaykrishna.ptr@gmail.com">ajaykrishna.ptr@gmail.com</a>
+    <a class="btn s" href="https://www.linkedin.com/in/ajaykrishna1/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn s" href="https://github.com/ajaykrishnaptr/bank-connectivity" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  © 2026 Ajay Krishna · Munich, Germany
+</div></footer>
+
+</body>
+</html>
