@@ -72,7 +72,7 @@
   .meta .pin{width:6px;height:6px;border-radius:50%;background:hsl(var(--highlight))}
   .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:44px 0 8px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:44px 0 8px}
   @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}}
   .stat{background:hsl(var(--card));border-radius:var(--radius);padding:20px 18px;text-align:left;
     box-shadow:var(--shadow-card);transition:.2s ease}
@@ -119,6 +119,7 @@
   .pill{font-family:"JetBrains Mono",monospace;font-size:12px;color:hsl(var(--foreground) / .72);
     background:hsl(var(--secondary));border-radius:7px;padding:5px 10px}
   .pcta{margin-top:auto;align-self:flex-start}
+  .pcta-row{display:flex;gap:10px;flex-wrap:wrap}
 
   .timeline{position:relative;margin-top:6px}
   .timeline::before{content:"";position:absolute;left:8px;top:10px;bottom:10px;width:2px;
@@ -196,7 +197,6 @@
 
   <div class="stats">
     <div class="stat"><div class="n">2</div><div class="l">shipped AI/payments builds</div></div>
-    <div class="stat"><div class="n">~80<span class="u">%&darr;</span></div><div class="l">unclassified transactions cut</div></div>
     <div class="stat"><div class="n">15+<span class="u">&nbsp;yrs</span></div><div class="l">banking IT, top-tier EU banks</div></div>
     <div class="stat"><div class="n">9</div><div class="l">Open Banking countries, bank-side</div></div>
   </div>
@@ -244,7 +244,10 @@
         <div class="pills">
           <span class="pill">Python / Flask</span><span class="pill">NextGenPSD2</span><span class="pill">Local LLM</span><span class="pill">Claude Code</span>
         </div>
-        <a class="btn s sm pcta" href="https://github.com/ajaykrishnaptr" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        <div class="pcta pcta-row">
+          <a class="btn p sm" href="https://bank-connectivity.vercel.app" target="_blank" rel="noopener">View live demo &rarr;</a>
+          <a class="btn s sm" href="https://github.com/ajaykrishnaptr/bank-connectivity" target="_blank" rel="noopener">View repo &rarr;</a>
+        </div>
       </div>
     </article>
 
@@ -288,7 +291,7 @@
       <div class="torg">Attra Infotech</div>
       <ul class="clean">
         <li>Built a 24&times;7 banking-app support operation from zero around an <strong>8+ member multicultural team</strong>.</li>
-        <li>Led scoping for Mastercard &amp; Visa scheme compliance, VisionPLUS&reg;, and FICO&reg; Falcon&reg; &mdash; foundational card-payments and ISO 8583 work.</li>
+        <li>Led scoping for Mastercard &amp; Visa scheme-compliance projects; ran <strong>VisionPLUS&reg;</strong> and <strong>FICO&reg; Falcon&reg;</strong> on the same mainframe stack (z/OS) &mdash; foundational card-payments and ISO 8583 work.</li>
       </ul>
     </div>
   </div>
