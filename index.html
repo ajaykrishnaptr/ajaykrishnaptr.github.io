@@ -61,10 +61,10 @@
   header.hero{position:relative;text-align:center;padding:60px 0 26px;overflow:hidden}
   header.hero::before{content:"";position:absolute;inset:0;background:var(--gradient-hero);pointer-events:none}
   header.hero .wrap{position:relative}
-  .avatar{width:min(300px,72vw);aspect-ratio:1;margin:-6px auto 2px;
-    background:url(ajay-krishna.jpg) 50% 18%/104% no-repeat;
-    -webkit-mask-image:radial-gradient(circle at 50% 45%, #000 42%, transparent 68%);
-    mask-image:radial-gradient(circle at 50% 45%, #000 42%, transparent 68%)}
+  .avatar{width:172px;height:172px;border-radius:50%;margin:0 auto 10px;display:block;
+    background:url(ajay-krishna.jpg) 50% 20%/130% no-repeat;
+    border:5px solid hsl(var(--card));
+    box-shadow:0 0 0 1.5px hsl(var(--border)), 0 16px 36px -14px hsl(var(--primary) / .5)}
   h1{font-size:clamp(33px,5.6vw,56px);line-height:1.05;margin:14px 0 0;letter-spacing:-.025em;font-weight:600}
   h1 .hl{background:var(--gradient-accent);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .lede{color:hsl(var(--muted));font-size:clamp(16px,2vw,18px);max-width:640px;margin:20px auto 0}
