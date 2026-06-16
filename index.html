@@ -96,8 +96,9 @@
   .card{background:hsl(var(--card));border-radius:var(--radius);box-shadow:var(--shadow-card);transition:.2s ease}
   .card:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-2px)}
 
-  .projgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  @media(max-width:760px){.projgrid{grid-template-columns:1fr}}
+  .projgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:900px){.projgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.projgrid{grid-template-columns:1fr}}
   .pbox{display:flex;flex-direction:column;overflow:hidden}
   .ptag{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
     color:hsl(var(--primary));background:hsl(var(--primary-soft));border-radius:999px;padding:5px 10px;font-weight:600}
@@ -187,7 +188,7 @@
   <img class="avatar" src="ajay-krishna.jpg" width="108" height="108" alt="Ajay Krishna" fetchpriority="high">
   <div class="kicker">Banking domain &times; AI product</div>
   <h1>Product manager building<br><span class="hl">AI into banking and payments</span>.</h1>
-  <p class="lede">15+ years inside European banks' payment systems, now shipping AI products: a live digital-euro operations console and a multi-bank Open Banking prototype with a GenAI categorizer.</p>
+  <p class="lede">15+ years inside European banks' payment systems, now shipping AI products across payments, Open Banking, and Open Finance &mdash; live consoles, B2B APIs, and a GenAI categorizer.</p>
   <div class="meta"><span class="pin"></span> Product Manager, Service Operations (PSD2 / Open Banking) &middot; Munich</div>
   <div class="cta">
     <a class="btn p" href="#work">See my work &rarr;</a>
@@ -196,7 +197,7 @@
   </div>
 
   <div class="stats">
-    <div class="stat"><div class="n">2</div><div class="l">shipped AI/payments builds</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">shipped AI/payments builds</div></div>
     <div class="stat"><div class="n">15+<span class="u">&nbsp;yrs</span></div><div class="l">banking IT, top-tier EU banks</div></div>
     <div class="stat"><div class="n">9</div><div class="l">Open Banking countries, bank-side</div></div>
   </div>
@@ -206,7 +207,7 @@
 <section id="work" class="alt"><div class="wrap">
   <div class="sechead">
     <div class="eyebrow">Selected work</div>
-    <h2>Two things I shipped &mdash; built, not just spec'd</h2>
+    <h2>What I've shipped &mdash; built, not just spec'd</h2>
   </div>
 
   <div class="projgrid">
@@ -227,7 +228,23 @@
       </div>
     </article>
 
-    <!-- Project 2: TPP categorizer -->
+    <!-- Project 2: Mastercard Open Finance Data -->
+    <article class="card pbox">
+      <a class="pbanner" href="https://mc-open-finance-data.vercel.app/console/" target="_blank" rel="noopener" aria-label="Open the Open Finance Data console live demo">
+        <img src="mc-ofd.jpg" alt="Open Finance Data console — capability landscape" loading="lazy">
+        <span class="ptag">Live demo</span>
+      </a>
+      <div class="pbody">
+        <h3>Open Finance Data &mdash; B2B use-case suite</h3>
+        <p>An illustrative Mastercard Open Finance Data prototype: 11 B2B use cases (account verification, income &amp; affordability, spending insights, MCC normalisation) on a synthetic-bank foundation &mdash; each a headless API plus a demo console.</p>
+        <div class="pills">
+          <span class="pill">Open Finance</span><span class="pill">MCC normalisation</span><span class="pill">Python API</span><span class="pill">Claude Code</span>
+        </div>
+        <a class="btn p sm pcta" href="https://mc-open-finance-data.vercel.app/console/" target="_blank" rel="noopener">View live demo &rarr;</a>
+      </div>
+    </article>
+
+    <!-- Project 3: TPP categorizer -->
     <article class="card pbox">
       <div class="pbanner code" aria-hidden="true">
 <pre><span class="cmt"># "AMZN MKTPLACE DE -42.10 EUR"</span>
