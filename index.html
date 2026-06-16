@@ -105,6 +105,12 @@
   .pbanner{position:relative;display:block;height:170px;background:hsl(222 47% 9%);overflow:hidden;line-height:0;border-bottom:1px solid hsl(var(--border))}
   .pbanner img{width:100%;height:100%;object-fit:cover;object-position:top}
   .pbanner .ptag{position:absolute;top:12px;left:12px;z-index:2;background:hsl(var(--card));box-shadow:var(--shadow-card)}
+  .pbanner.emblem{display:flex;align-items:center;justify-content:center;color:#fff}
+  .pbanner.emblem::after{content:"";position:absolute;inset:0;background:radial-gradient(120px 90px at 78% 18%, rgba(255,255,255,.18), transparent 70%)}
+  .pbanner.emblem svg{width:74px;height:74px;position:relative;z-index:1;filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))}
+  .e-euro{background:linear-gradient(135deg, hsl(216 85% 40%), hsl(199 88% 46%))}
+  .e-ofd{background:linear-gradient(135deg, hsl(250 58% 50%), hsl(284 52% 52%))}
+  .e-tpp{background:linear-gradient(135deg, hsl(165 56% 34%), hsl(190 62% 42%))}
   .pbanner.code{display:flex;align-items:center}
   .pbanner.code pre{margin:0;padding:0 20px;font-family:"JetBrains Mono",monospace;font-size:12.5px;line-height:1.8;color:hsl(215 28% 82%);white-space:pre}
   .pbanner.code .k{color:hsl(215 70% 72%)}.pbanner.code .s{color:hsl(150 45% 65%)}
@@ -214,10 +220,14 @@
 
     <!-- Project 1: Digital Euro -->
     <article class="card pbox">
-      <a class="pbanner" href="https://digital-euro-console.vercel.app" target="_blank" rel="noopener" aria-label="Open the Digital Euro console live demo">
-        <img src="digital-euro.jpg" alt="Digital Euro operations console — overview screen" loading="lazy">
+      <div class="pbanner emblem e-euro">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9.2"/>
+          <path d="M15.6 9.1a4.2 4.2 0 1 0 0 5.8"/>
+          <path d="M7.4 11h6.2M7.4 13.4h5.2"/>
+        </svg>
         <span class="ptag">Live demo</span>
-      </a>
+      </div>
       <div class="pbody">
         <h3>Digital Euro &mdash; PSP Operations Console</h3>
         <p>A bank/PSP-side React console for folding the digital euro into an existing payment estate: holding-limit &amp; waterfall engine, ISO 20022 settlement over DESP/TARGET, compliance, and a phased roadmap.</p>
@@ -230,10 +240,13 @@
 
     <!-- Project 2: Mastercard Open Finance Data -->
     <article class="card pbox">
-      <a class="pbanner" href="https://mc-open-finance-data.vercel.app/console/" target="_blank" rel="noopener" aria-label="Open the Open Finance Data console live demo">
-        <img src="mc-ofd.jpg" alt="Open Finance Data console — capability landscape" loading="lazy">
+      <div class="pbanner emblem e-ofd">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="5.5" cy="6" r="2.1"/><circle cx="5.5" cy="18" r="2.1"/><circle cx="18.5" cy="12" r="2.1"/>
+          <path d="M7.5 7.1l9 4M7.5 16.9l9-4"/>
+        </svg>
         <span class="ptag">Live demo</span>
-      </a>
+      </div>
       <div class="pbody">
         <h3>Open Finance Data &mdash; B2B use-case suite</h3>
         <p>An illustrative Mastercard Open Finance Data prototype: 11 B2B use cases (account verification, income &amp; affordability, spending insights, MCC normalisation) on a synthetic-bank foundation &mdash; each a headless API plus a demo console.</p>
@@ -246,13 +259,11 @@
 
     <!-- Project 3: TPP categorizer -->
     <article class="card pbox">
-      <div class="pbanner code" aria-hidden="true">
-<pre><span class="cmt"># "AMZN MKTPLACE DE -42.10 EUR"</span>
-{
-  <span class="k">"category"</span>:   <span class="s">"shopping"</span>,
-  <span class="k">"confidence"</span>: <span class="num">0.92</span>,
-  <span class="k">"routed_via"</span>: <span class="s">"override"</span>
-}</pre>
+      <div class="pbanner emblem e-tpp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M8 4H7a3 3 0 0 0-3 3v2.6a2 2 0 0 1-2 2 2 2 0 0 1 2 2V19a3 3 0 0 0 3 3h1"/>
+          <path d="M16 4h1a3 3 0 0 1 3 3v2.6a2 2 0 0 0 2 2 2 2 0 0 0-2 2V19a3 3 0 0 1-3 3h-1"/>
+        </svg>
         <span class="ptag">GenAI categorizer</span>
       </div>
       <div class="pbody">
@@ -285,9 +296,9 @@
       <div class="trole">Product Manager, Service Operations (PSD2 / Open Banking)</div>
       <div class="torg">UniCredit</div>
       <ul class="clean">
-        <li><strong>Product owner</strong> for Open Banking service operations across <strong>9 EU markets</strong> &mdash; drove the case to migrate the developer portal to a new API-gateway platform and aligned all 9 country entities behind it; recommendation approved by senior management.</li>
+        <li><strong>Owned Open Banking service operations across 9 EU markets.</strong></li>
         <li>Built the Splunk-based Open Banking monitoring framework across those markets that cut <strong>regulatory incidents 99%</strong> &mdash; now the bank's standard; automated my own ticket triage with Copilot (<strong>34%</strong> faster).</li>
-        <li>Supported the 2024 Hungarian National Bank Open Banking <strong>audit</strong> (IT side) &mdash; furnished evidence and drafted answers, surfacing a compliance gap with a remediation plan; no significant findings. Feed IT-side input into <strong>PSD3 / PSR</strong> feasibility, incl. Verification-of-Payee.</li>
+        <li><strong>Drove the IT-side response</strong> to the 2024 Hungarian National Bank Open Banking audit &mdash; furnished evidence and drafted answers, surfacing a compliance gap with a remediation plan; no significant findings.</li>
       </ul>
     </div>
 
