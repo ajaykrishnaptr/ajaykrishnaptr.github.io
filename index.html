@@ -95,33 +95,29 @@
   .card{background:hsl(var(--card));border-radius:var(--radius);box-shadow:var(--shadow-card);transition:.2s ease}
   .card:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-2px)}
 
-  .proj{padding:26px}
-  .projlist{display:grid;gap:20px}
-  .ptag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
-    color:hsl(var(--primary));background:hsl(var(--primary-soft));border-radius:999px;padding:5px 11px;font-weight:500}
-  .proj h3{font-size:clamp(18px,2.3vw,22px);margin:14px 0 8px;letter-spacing:-.02em;font-weight:600}
-  .proj .intro{color:hsl(var(--muted));font-size:14.5px;margin:0}
+  .projgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:760px){.projgrid{grid-template-columns:1fr}}
+  .pbox{display:flex;flex-direction:column;overflow:hidden}
+  .ptag{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:hsl(var(--primary));background:hsl(var(--primary-soft));border-radius:999px;padding:5px 10px;font-weight:600}
+  .pbanner{position:relative;display:block;height:170px;background:hsl(222 47% 9%);overflow:hidden;line-height:0;border-bottom:1px solid hsl(var(--border))}
+  .pbanner img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .pbanner .ptag{position:absolute;top:12px;left:12px;z-index:2;background:hsl(var(--card));box-shadow:var(--shadow-card)}
+  .pbanner.code{display:flex;align-items:center}
+  .pbanner.code pre{margin:0;padding:0 20px;font-family:"JetBrains Mono",monospace;font-size:12.5px;line-height:1.8;color:hsl(215 28% 82%);white-space:pre}
+  .pbanner.code .k{color:hsl(215 70% 72%)}.pbanner.code .s{color:hsl(150 45% 65%)}
+  .pbanner.code .num{color:hsl(38 80% 66%)}.pbanner.code .cmt{color:hsl(215 14% 50%)}
+  .pbody{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .pbody h3{font-family:Geist,sans-serif;font-size:18px;margin:0 0 8px;letter-spacing:-.01em;font-weight:600}
+  .pbody p{margin:0;color:hsl(var(--muted));font-size:14px;line-height:1.55}
   ul.clean{margin:16px 0 0;padding:0;list-style:none}
   ul.clean li{position:relative;padding-left:22px;margin:9px 0;color:hsl(var(--foreground) / .82);font-size:14px;line-height:1.5}
   ul.clean li::before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:2px;background:var(--gradient-accent)}
   ul.clean li strong{color:hsl(var(--foreground))}
-  .shot{margin-top:18px;border-radius:10px;overflow:hidden;border:1px solid hsl(var(--border));display:block;line-height:0}
-  .shot img{width:100%;height:auto;display:block}
-  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
   .pill{font-family:"JetBrains Mono",monospace;font-size:12px;color:hsl(var(--foreground) / .72);
     background:hsl(var(--secondary));border-radius:7px;padding:5px 10px}
-  .projcta{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
-
-  .jsonpanel{margin-top:18px;border-radius:10px;overflow:hidden;border:1px solid hsl(var(--border))}
-  .jsonpanel .bar{display:flex;align-items:center;gap:7px;padding:9px 14px;background:hsl(222 40% 13%);border-bottom:1px solid hsl(222 30% 20%)}
-  .jsonpanel .bar .d{width:10px;height:10px;border-radius:50%;background:hsl(222 18% 38%)}
-  .jsonpanel .bar .cap{margin-left:8px;font-family:"JetBrains Mono",monospace;font-size:11px;color:hsl(215 25% 68%);letter-spacing:.04em}
-  .jsonpanel pre{margin:0;padding:16px 18px;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.7;
-    color:hsl(215 28% 82%);background:hsl(222 47% 9%);overflow-x:auto}
-  .jsonpanel .k{color:hsl(215 70% 72%)}
-  .jsonpanel .s{color:hsl(150 45% 65%)}
-  .jsonpanel .num{color:hsl(38 80% 66%)}
-  .jsonpanel .cmt{color:hsl(215 14% 50%)}
+  .pcta{margin-top:auto;align-self:flex-start}
 
   .joblist{display:grid;gap:14px}
   .job{padding:22px 24px}
@@ -207,55 +203,44 @@
     <h2>Two things I shipped &mdash; built, not just spec'd</h2>
   </div>
 
-  <div class="projlist">
+  <div class="projgrid">
 
     <!-- Project 1: Digital Euro -->
-    <div class="card proj">
-      <span class="ptag">Live demo &middot; built with Claude Code</span>
-      <h3>Digital Euro &mdash; PSP Integration &amp; Operations Console</h3>
-      <p class="intro">A bank/PSP-side React console showing how a European incumbent would fold the digital euro into its existing payment estate: holdings, settlement, compliance, onboarding, and a phased integration roadmap.</p>
-      <ul class="clean">
-        <li>Centerpiece <strong>holding-limit &amp; waterfall engine</strong>, ISO 20022 settlement (<code>pacs.008/002</code>) over DESP &amp; TARGET &mdash; domain-accurate for a senior payments audience.</li>
-        <li>Six operational sections and five replayable scenarios; React 18 / Vite / Tailwind, <strong>78 tests</strong>.</li>
-      </ul>
-      <a class="shot" href="https://digital-euro-console.vercel.app" target="_blank" rel="noopener">
+    <article class="card pbox">
+      <a class="pbanner" href="https://digital-euro-console.vercel.app" target="_blank" rel="noopener" aria-label="Open the Digital Euro console live demo">
         <img src="digital-euro.jpg" alt="Digital Euro operations console — overview screen" loading="lazy">
+        <span class="ptag">Live demo</span>
       </a>
-      <div class="pills">
-        <span class="pill">React 18</span><span class="pill">Tailwind</span><span class="pill">Tremor</span>
-        <span class="pill">ISO 20022</span><span class="pill">DESP / TARGET</span><span class="pill">Vitest (78)</span>
+      <div class="pbody">
+        <h3>Digital Euro &mdash; PSP Operations Console</h3>
+        <p>A bank/PSP-side React console for folding the digital euro into an existing payment estate: holding-limit &amp; waterfall engine, ISO 20022 settlement over DESP/TARGET, compliance, and a phased roadmap.</p>
+        <div class="pills">
+          <span class="pill">React 18</span><span class="pill">ISO 20022</span><span class="pill">78 tests</span><span class="pill">Claude Code</span>
+        </div>
+        <a class="btn p sm pcta" href="https://digital-euro-console.vercel.app" target="_blank" rel="noopener">View live demo &rarr;</a>
       </div>
-      <div class="projcta">
-        <a class="btn p sm" href="https://digital-euro-console.vercel.app" target="_blank" rel="noopener">View live demo &rarr;</a>
-      </div>
-    </div>
+    </article>
 
     <!-- Project 2: TPP categorizer -->
-    <div class="card proj">
-      <span class="ptag">Built with Claude Code</span>
-      <h3>Multi-Bank Open Banking TPP + GenAI categorizer</h3>
-      <p class="intro">I'd run Open Banking from the <em>bank's</em> side for years; I wanted the <em>TPP developer's</em> side, where AI moves the needle. The PRD and every product call were mine; Claude Code wrote the implementation.</p>
-      <ul class="clean">
-        <li><strong>5 European banks integrated</strong> at sandbox level over Berlin Group / NextGenPSD2 (OAuth2, mTLS, request signatures).</li>
-        <li><strong>GenAI categorizer cut unclassified transactions ~80%</strong> (217&rarr;42 of 1,303) on an evaluation harness; caught and fixed a real LLM bias bug via an override layer.</li>
-      </ul>
-      <div class="jsonpanel" aria-label="Example categorizer output">
-        <div class="bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="cap">categorizer &middot; structured output</span></div>
-<pre><span class="cmt"># in:  "AMZN MKTPLACE DE -42.10 EUR"</span>
+    <article class="card pbox">
+      <div class="pbanner code" aria-hidden="true">
+<pre><span class="cmt"># "AMZN MKTPLACE DE -42.10 EUR"</span>
 {
   <span class="k">"category"</span>:   <span class="s">"shopping"</span>,
   <span class="k">"confidence"</span>: <span class="num">0.92</span>,
-  <span class="k">"routed_via"</span>: <span class="s">"override"</span>   <span class="cmt"># tier 1 of 3</span>
+  <span class="k">"routed_via"</span>: <span class="s">"override"</span>
 }</pre>
+        <span class="ptag">GenAI categorizer</span>
       </div>
-      <div class="pills">
-        <span class="pill">Python / Flask</span><span class="pill">NextGenPSD2</span><span class="pill">Ollama + Qwen 2.5 3B</span>
-        <span class="pill">Structured JSON</span><span class="pill">Evaluation harness</span>
+      <div class="pbody">
+        <h3>Multi-Bank Open Banking TPP</h3>
+        <p>A multi-bank PSD2 aggregator (5 European banks, Berlin Group). A three-tier GenAI categorizer cut unclassified transactions ~80% on an evaluation harness, with an override layer that fixed a real LLM bias bug.</p>
+        <div class="pills">
+          <span class="pill">Python / Flask</span><span class="pill">NextGenPSD2</span><span class="pill">Local LLM</span><span class="pill">Claude Code</span>
+        </div>
+        <a class="btn s sm pcta" href="https://github.com/ajaykrishnaptr" target="_blank" rel="noopener">View on GitHub &rarr;</a>
       </div>
-      <div class="projcta">
-        <a class="btn s sm" href="https://github.com/ajaykrishnaptr/bank-connectivity" target="_blank" rel="noopener">View repo &rarr;</a>
-      </div>
-    </div>
+    </article>
 
   </div>
 </div></section>
@@ -343,7 +328,7 @@
     <p>Based in Munich. Always glad to compare notes on Open Banking, payments infrastructure, and where AI earns its place in regulated operations.</p>
     <div class="links">
       <a class="btn p" href="mailto:ajaykrishna.ptr@gmail.com">ajaykrishna.ptr@gmail.com</a>
-      <a class="btn s" href="https://github.com/ajaykrishnaptr/bank-connectivity" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn s" href="https://github.com/ajaykrishnaptr" target="_blank" rel="noopener">GitHub</a>
     </div>
     <a class="licard" href="https://www.linkedin.com/in/ajaykrishna1/" target="_blank" rel="noopener" aria-label="Ajay Krishna on LinkedIn">
       <img src="ajay-krishna.jpg" width="52" height="52" alt="">
