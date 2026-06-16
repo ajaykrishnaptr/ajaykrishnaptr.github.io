@@ -61,9 +61,10 @@
   header.hero{position:relative;text-align:center;padding:60px 0 26px;overflow:hidden}
   header.hero::before{content:"";position:absolute;inset:0;background:var(--gradient-hero);pointer-events:none}
   header.hero .wrap{position:relative}
-  .avatar{width:min(240px,60vw);aspect-ratio:1;height:auto;margin:0 auto 8px;display:block;object-fit:cover;object-position:50% 22%;
-    -webkit-mask-image:radial-gradient(circle at 50% 42%, #000 40%, transparent 86%);
-    mask-image:radial-gradient(circle at 50% 42%, #000 40%, transparent 86%)}
+  .avatar{width:min(240px,60vw);aspect-ratio:1;margin:0 auto 8px;
+    background:url(ajay-krishna.jpg) 50% 24%/124% no-repeat;
+    -webkit-mask-image:radial-gradient(circle at 50% 50%, #000 46%, transparent 78%);
+    mask-image:radial-gradient(circle at 50% 50%, #000 46%, transparent 78%)}
   h1{font-size:clamp(33px,5.6vw,56px);line-height:1.05;margin:14px 0 0;letter-spacing:-.025em;font-weight:600}
   h1 .hl{background:var(--gradient-accent);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .lede{color:hsl(var(--muted));font-size:clamp(16px,2vw,18px);max-width:640px;margin:20px auto 0}
@@ -191,7 +192,7 @@
 
 <!-- HERO -->
 <header class="hero"><div class="wrap">
-  <img class="avatar" src="ajay-krishna.jpg" width="108" height="108" alt="Ajay Krishna" fetchpriority="high">
+  <div class="avatar" role="img" aria-label="Ajay Krishna"></div>
   <div class="kicker">Banking domain &times; AI product</div>
   <h1>Product Manager building<br><span class="hl">AI into banking and payments</span>.</h1>
   <p class="lede">15+ years inside European banks' payment systems, now shipping AI products across payments, Open Banking, and Open Finance &mdash; live consoles, B2B APIs, and a GenAI categorizer.</p>
