@@ -58,11 +58,12 @@
   .btn.s:hover{border-color:hsl(var(--primary) / .5);color:hsl(var(--primary))}
   .btn.sm{padding:8px 13px;font-size:13px}
 
-  header.hero{position:relative;text-align:center;padding:82px 0 26px;overflow:hidden}
+  header.hero{position:relative;text-align:center;padding:60px 0 26px;overflow:hidden}
   header.hero::before{content:"";position:absolute;inset:0;background:var(--gradient-hero);pointer-events:none}
   header.hero .wrap{position:relative}
-  .avatar{width:108px;height:108px;border-radius:50%;margin:0 auto 22px;display:block;object-fit:cover;
-    background:hsl(var(--secondary));box-shadow:0 12px 32px -10px hsl(var(--primary) / .5), 0 0 0 5px hsl(var(--card)), 0 0 0 6px hsl(var(--primary-soft))}
+  .avatar{width:min(240px,60vw);aspect-ratio:1;height:auto;margin:0 auto 8px;display:block;object-fit:cover;object-position:50% 36%;
+    -webkit-mask-image:radial-gradient(circle at 50% 44%, #000 48%, transparent 72%);
+    mask-image:radial-gradient(circle at 50% 44%, #000 48%, transparent 72%)}
   h1{font-size:clamp(33px,5.6vw,56px);line-height:1.05;margin:14px 0 0;letter-spacing:-.025em;font-weight:600}
   h1 .hl{background:var(--gradient-accent);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .lede{color:hsl(var(--muted));font-size:clamp(16px,2vw,18px);max-width:640px;margin:20px auto 0}
