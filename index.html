@@ -108,8 +108,7 @@
   .card{background:hsl(var(--card));border-radius:var(--radius);box-shadow:var(--shadow-card);transition:.2s ease}
   .card:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-2px)}
 
-  .projgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media(max-width:900px){.projgrid{grid-template-columns:1fr 1fr}}
+  .projgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   @media(max-width:620px){.projgrid{grid-template-columns:1fr}}
   .pbox{display:flex;flex-direction:column;overflow:hidden}
   .ptag{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
@@ -213,7 +212,7 @@
   </div>
 
   <div class="stats">
-    <div class="stat"><div class="n">3</div><div class="l">shipped AI/payments builds</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">shipped AI/payments builds</div></div>
     <div class="stat"><div class="n">15+ years</div><div class="l">in Banking IT, top-tier EU banks</div></div>
     <div class="stat"><div class="n">9</div><div class="l">Open Banking countries, bank-side</div></div>
   </div>
@@ -307,6 +306,38 @@
           <a class="btn p sm" href="https://bank-connectivity.vercel.app" target="_blank" rel="noopener">View live demo</a>
           <a class="btn s sm" href="https://github.com/ajaykrishnaptr/bank-connectivity" target="_blank" rel="noopener">View repo</a>
         </div>
+      </div>
+    </article>
+
+    <!-- Project 4: Agentic commerce / payment-authority -->
+    <article class="card pbox">
+      <div class="pbanner emblem e-agent">
+        <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+          <defs>
+            <radialGradient id="agOrb" cx="42%" cy="34%" r="72%">
+              <stop offset="0%" stop-color="#ffe3ab"/><stop offset="55%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#b45309"/>
+            </radialGradient>
+            <radialGradient id="agGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#f59e0b" stop-opacity=".42"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="74" fill="url(#agGlow)"/>
+          <circle cx="100" cy="100" r="80" stroke="#5b6b8c" stroke-width="1.4" stroke-dasharray="2 7" opacity=".75"/>
+          <g stroke="#9a6a25" stroke-width="1.5"><line x1="100" y1="100" x2="100" y2="42"/><line x1="100" y1="100" x2="156" y2="120"/><line x1="100" y1="100" x2="44" y2="120"/></g>
+          <g fill="#caa14e"><circle cx="100" cy="40" r="6"/><circle cx="158" cy="120" r="6"/><circle cx="42" cy="120" r="6"/></g>
+          <circle cx="100" cy="100" r="38" fill="url(#agOrb)" stroke="#ffe9c2" stroke-opacity=".5" stroke-width="1.5"/>
+          <path d="M100 83 l15 6 v9 c0 12 -7 18 -15 23 c-8 -5 -15 -11 -15 -23 v-9 z" fill="none" stroke="#5a2e0a" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M92 101 l6 6 l12 -13" fill="none" stroke="#5a2e0a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="ptag">Live demo</span>
+      </div>
+      <div class="pbody">
+        <h3>Agentic Commerce: Payment-Authority Gate</h3>
+        <p>An AI shopping agent that discovers products, then passes a payment-authority gate to check out: an Ed25519 agent identity, a scoped single-use issuer-signed mandate (Mastercard Verifiable-Intent style), and Open Banking settlement after one human SCA, with every agent call RFC 9421 signed.</p>
+        <div class="pills">
+          <span class="pill">Agentic commerce</span><span class="pill">Ed25519 / RFC 9421</span><span class="pill">Open Banking</span><span class="pill">Claude Code</span>
+        </div>
+        <a class="btn p sm pcta" href="https://agent-payment-authority.vercel.app/" target="_blank" rel="noopener">View live demo</a>
       </div>
     </article>
 
