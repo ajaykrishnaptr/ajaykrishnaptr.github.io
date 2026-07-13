@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ajay Krishna, Banking domain + AI product</title>
 <meta name="description" content="Banking-IT domain expert (15+ years across European banks) moving into AI product management, shipping a digital-euro operations console and a multi-bank Open Banking prototype with a GenAI categorizer.">
-<meta name="theme-color" content="#fbfcfd">
+<meta name="theme-color" content="#0d1320">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ajay-krishna.com/">
 <meta property="og:title" content="Ajay Krishna, Product Manager in Banking &amp; AI">
@@ -70,7 +70,8 @@
   .btn.sm{padding:8px 13px;font-size:13px}
 
   header.hero{position:relative;text-align:center;padding:60px 0 26px;overflow:hidden}
-  header.hero::before{content:"";position:absolute;inset:0;background:var(--gradient-hero);pointer-events:none}
+  header.hero::before{content:"";position:absolute;inset:0;background:var(--gradient-hero);pointer-events:none;
+    animation:floatGlow 16s ease-in-out infinite;will-change:transform}
   header.hero .wrap{position:relative}
   .avatar{width:200px;height:200px;border-radius:50%;margin:0 auto 10px;display:block;
     background:url(ajay-krishna.jpg) 50% 50%/cover no-repeat;
@@ -182,8 +183,58 @@
   footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;color:hsl(var(--muted));font-size:13px}
   footer .mono{font-family:"JetBrains Mono",monospace;font-size:12px}
 
-  @media(prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto !important}.btn:hover,.stat:hover,.card:hover{transform:none}}
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+    .btn:hover,.stat:hover,.card:hover{transform:none}
+    .reveal{opacity:1 !important;transform:none !important}
+    .hero .avatar,.hero .kicker,.hero h1,.hero .lede,.hero .meta,.hero .cta{opacity:1 !important}
+  }
   :focus-visible{outline:2px solid hsl(var(--primary));outline-offset:3px;border-radius:4px}
+
+  /* ---- Dark theme ---- */
+  html{color-scheme:light}
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --background:222 44% 8%;
+    --foreground:210 32% 92%;
+    --card:222 38% 12%;
+    --primary:214 90% 64%;
+    --primary-soft:216 50% 22%;
+    --secondary:222 28% 18%;
+    --muted:214 16% 64%;
+    --highlight:38 92% 62%;
+    --border:220 22% 22%;
+    --surface:222 34% 11%;
+    --shadow-card:0 0 0 1px hsl(220 22% 26% / .9), 0 1px 2px hsl(0 0% 0% / .3), 0 6px 16px -6px hsl(0 0% 0% / .5);
+    --shadow-card-hover:0 0 0 1px hsl(214 80% 58% / .55), 0 8px 20px -6px hsl(0 0% 0% / .55), 0 20px 44px -14px hsl(0 0% 0% / .6);
+    --gradient-hero:radial-gradient(ellipse 80% 60% at 50% 0%, hsl(214 80% 34% / .40), transparent 70%);
+    --gradient-accent:linear-gradient(135deg, hsl(214 88% 56%), hsl(224 80% 66%));
+  }
+
+  /* scroll reveal (stronger) */
+  .reveal{opacity:0;transform:translateY(48px) scale(.965);
+    transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  /* directional slide for project cards */
+  .reveal.from-left{transform:translateX(-54px) scale(.985)}
+  .reveal.from-right{transform:translateX(54px) scale(.985)}
+  .reveal.from-left.in,.reveal.from-right.in{transform:none}
+  /* timeline line draws in (JS-gated via .tl-draw so no-JS keeps the line) */
+  .timeline.tl-draw::before{transform:scaleY(0);transform-origin:top;
+    transition:transform .95s cubic-bezier(.16,1,.3,1)}
+  .timeline.tl-draw.in::before{transform:scaleY(1)}
+
+  /* hero load-in + ambient motion */
+  @keyframes fadeRise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes floatGlow{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(2%,3%) scale(1.06)}}
+  .hero .avatar,.hero .kicker,.hero h1,.hero .lede,.hero .meta,.hero .cta{
+    opacity:0;animation:fadeRise .9s cubic-bezier(.16,1,.3,1) both}
+  .hero .avatar{animation-delay:.05s}
+  .hero .kicker{animation-delay:.18s}
+  .hero h1{animation-delay:.3s}
+  .hero .lede{animation-delay:.46s}
+  .hero .meta{animation-delay:.6s}
+  .hero .cta{animation-delay:.72s}
 </style>
 </head>
 <body>
@@ -229,8 +280,25 @@
 
     <!-- Project 1: Digital Euro -->
     <article class="card pbox">
-      <div class="pbanner euro-pic">
-        <img src="digital-euro-pic.png" alt="Digital euro" loading="lazy">
+      <div class="pbanner emblem e-euro">
+        <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+          <defs>
+            <radialGradient id="euroOrb" cx="42%" cy="34%" r="72%">
+              <stop offset="0%" stop-color="#bcd6ff"/><stop offset="55%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#1e3a8a"/>
+            </radialGradient>
+            <radialGradient id="euroGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#3b82f6" stop-opacity=".46"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="74" fill="url(#euroGlow)"/>
+          <circle cx="100" cy="100" r="80" stroke="#5b6b8c" stroke-width="1.4" stroke-dasharray="2 7" opacity=".75"/>
+          <g stroke="#3a5a9a" stroke-width="1.5"><line x1="100" y1="100" x2="100" y2="42"/><line x1="100" y1="100" x2="156" y2="120"/><line x1="100" y1="100" x2="44" y2="120"/></g>
+          <g fill="#6d8fd6"><circle cx="100" cy="40" r="6"/><circle cx="158" cy="120" r="6"/><circle cx="42" cy="120" r="6"/></g>
+          <circle cx="100" cy="100" r="38" fill="url(#euroOrb)" stroke="#cfe0ff" stroke-opacity=".45" stroke-width="1.5"/>
+          <path d="M114 87 a17 17 0 1 0 0 26" fill="none" stroke="#0a2a5c" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M82 95 H107" stroke="#0a2a5c" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M82 105 H107" stroke="#0a2a5c" stroke-width="3.4" stroke-linecap="round"/>
+        </svg>
         <span class="ptag">Live demo</span>
       </div>
       <div class="pbody">
@@ -480,6 +548,47 @@
   <span>&copy; 2026 Ajay Krishna &middot; Munich, Germany</span>
   <span class="mono">Banking domain &times; AI product</span>
 </div></footer>
+
+<script>
+(function(){
+  // Respects reduced motion; content stays visible if JS/observer unavailable.
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var hasIO = 'IntersectionObserver' in window;
+  function observe(list){
+    if(!hasIO){ list.forEach(function(el){ el.classList.add('in'); }); return; }
+    var io=new IntersectionObserver(function(ents){
+      ents.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:0.1, rootMargin:'0px 0px -12% 0px'});
+    list.forEach(function(el){ io.observe(el); });
+  }
+
+  // 1. Standard rise reveals (stats, headers, skill cards, certs, contact)
+  ['.stats .stat','.sechead','.grid3 .feat','.certs','.contact .card'].forEach(function(sel){
+    var i=0, list=[];
+    document.querySelectorAll(sel).forEach(function(el){
+      el.classList.add('reveal'); el.style.transitionDelay=(i*120)+'ms'; i++; list.push(el);
+    });
+    observe(list);
+  });
+
+  // 2. Project cards: alternating slide from left / right (column-mapped)
+  var cards=[], j=0;
+  document.querySelectorAll('.projgrid .card').forEach(function(el){
+    el.classList.add('reveal', j%2===0 ? 'from-left' : 'from-right');
+    el.style.transitionDelay=(Math.floor(j/2)*130)+'ms'; j++; cards.push(el);
+  });
+  observe(cards);
+
+  // 3. Timeline: draw the line in, then rise each entry
+  var tl=document.querySelector('.timeline');
+  if(tl){ tl.classList.add('tl-draw'); observe([tl]); }
+  var entries=[], k=0;
+  document.querySelectorAll('.timeline .tentry').forEach(function(el){
+    el.classList.add('reveal'); el.style.transitionDelay=(180 + k*160)+'ms'; k++; entries.push(el);
+  });
+  observe(entries);
+})();
+</script>
 
 </body>
 </html>
