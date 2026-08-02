@@ -442,6 +442,38 @@
       </div>
     </article>
 
+    <!-- Project 6: Open Banking payment agent -->
+    <article class="card pbox">
+      <div class="pbanner emblem e-vop">
+        <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+          <defs>
+            <radialGradient id="vopOrb" cx="42%" cy="34%" r="72%">
+              <stop offset="0%" stop-color="#a5f3fc"/><stop offset="55%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#075985"/>
+            </radialGradient>
+            <radialGradient id="vopGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#06b6d4" stop-opacity=".46"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="74" fill="url(#vopGlow)"/>
+          <circle cx="100" cy="100" r="80" stroke="#5b6b8c" stroke-width="1.4" stroke-dasharray="2 7" opacity=".75"/>
+          <g stroke="#3a6a7a" stroke-width="1.5"><line x1="34" y1="100" x2="62" y2="100"/><line x1="138" y1="100" x2="166" y2="100"/></g>
+          <g fill="#67d3e6"><circle cx="30" cy="100" r="6"/><circle cx="170" cy="100" r="6"/></g>
+          <circle cx="100" cy="100" r="38" fill="url(#vopOrb)" stroke="#cffafe" stroke-opacity=".45" stroke-width="1.5"/>
+          <path d="M84 99 l11 11 l22 -24" fill="none" stroke="#073b4c" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M88 124 H112" stroke="#073b4c" stroke-width="3.4" stroke-linecap="round" opacity=".75"/>
+        </svg>
+        <span class="ptag">Live demo</span>
+      </div>
+      <div class="pbody">
+        <h3>Open Banking Payment Agent</h3>
+        <p>An agent that initiates account-to-account payments on the TrueLayer sandbox. It checks that the payee name really owns the account before anything moves, and stops for human approval when something looks wrong. The language model advises at the edges and never makes the payment decision. A LangGraph state machine with interrupt-based human-in-the-loop, an external checkpointer so a paused run survives a stateless runtime, and a versioned evaluation suite that asserts the path a run took.</p>
+        <div class="pills">
+          <span class="pill">LangGraph</span><span class="pill">Human-in-the-loop</span><span class="pill">Evals</span><span class="pill">Claude Code</span>
+        </div>
+        <a class="btn p sm pcta" href="https://openbanking-payment-agent.vercel.app" target="_blank" rel="noopener">View live demo</a>
+      </div>
+    </article>
+
   </div>
 </div></section>
 
@@ -471,7 +503,7 @@
       <div class="trole">Senior IT Service Manager &middot; Service Transition Manager</div>
       <div class="torg">Nordea Bank</div>
       <ul class="clean">
-        <li>Held P&amp;L for portfolio products; drove a Time &amp; Material to Managed Services switch and recovered a <strong>36%</strong> regulatory-reporting SLA improvement post-cutover.</li>
+        <li>Held P&amp;L for portfolio products; drove a Time &amp; Material to Managed Services switch and, after recovering the post-cutover breaches, delivered the regulatory-reporting artefacts <strong>36% faster</strong>.</li>
         <li>Built the Nordea Service Transition Framework (adopted org-wide); ran 5 large transitions end-to-end.</li>
       </ul>
     </div>
