@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ajay Krishna, Banking domain + AI product</title>
-<meta name="description" content="Banking-IT domain expert (15+ years across European banks) moving into AI product management, shipping a digital-euro operations console and a multi-bank Open Banking prototype with a GenAI categorizer.">
+<meta name="description" content="Banking-IT domain expert (15+ years across European banks) moving into AI product management, shipping a Digital Euro operations console and a multi-bank Open Banking prototype with a GenAI categorizer, and writing on the Digital Euro.">
 <meta name="theme-color" content="#0d1320">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ajay-krishna.com/">
 <meta property="og:title" content="Ajay Krishna, Product Manager in Banking &amp; AI">
-<meta property="og:description" content="15+ years in European banking IT, now building AI products: a digital-euro operations console, an Open Finance lending decision engine, an Open Finance Data suite, and a multi-bank Open Banking prototype with a GenAI categorizer.">
+<meta property="og:description" content="15+ years in European banking IT, now building AI products: a Digital Euro operations console, an Open Finance lending decision engine, an Open Finance Data suite, and a multi-bank Open Banking prototype with a GenAI categorizer.">
 <meta property="og:image" content="https://ajay-krishna.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -138,6 +138,15 @@
   .pcta{margin-top:auto;align-self:flex-start}
   .pcta-row{display:flex;gap:10px;flex-wrap:wrap}
 
+  .writelist{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:680px){.writelist{grid-template-columns:1fr}}
+  .witem{display:flex;flex-direction:column;gap:6px;padding:18px 20px;color:inherit}
+  .witem:hover{text-decoration:none}
+  .wdate{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.04em;color:hsl(var(--muted))}
+  .wtitle{font-family:Geist,sans-serif;font-weight:600;font-size:15.5px;line-height:1.35;letter-spacing:-.01em;color:hsl(var(--foreground))}
+  .witem:hover .wtitle{color:hsl(var(--primary))}
+  .wnote{font-size:13.5px;color:hsl(var(--muted));line-height:1.5}
+
   .timeline{position:relative;margin-top:6px}
   .timeline::before{content:"";position:absolute;left:8px;top:10px;bottom:10px;width:2px;
     background:linear-gradient(180deg, hsl(var(--primary) / .45), hsl(var(--border)))}
@@ -243,6 +252,7 @@
   <span class="brand"><span class="dot"></span>Ajay Krishna</span>
   <span class="navlinks">
     <a class="hidem" href="#work">Work</a>
+    <a class="hidem" href="#writing">Writing</a>
     <a class="hidem" href="#experience">Experience</a>
     <a class="hidem" href="#skills">Skills</a>
     <a href="#contact">Contact</a>
@@ -265,7 +275,7 @@
   <div class="stats">
     <div class="stat"><div class="n">6</div><div class="l">shipped AI/payments builds</div></div>
     <div class="stat"><div class="n">15+ years</div><div class="l">in Banking IT, top-tier EU banks</div></div>
-    <div class="stat"><div class="n">9</div><div class="l">Open Banking countries, bank-side</div></div>
+    <div class="stat"><div class="n">600</div><div class="l">licensed third-party providers across 9 markets, ~37M API calls a month</div></div>
   </div>
 </div></header>
 
@@ -303,7 +313,7 @@
       </div>
       <div class="pbody">
         <h3>Digital Euro: PSP Operations Console</h3>
-        <p>A bank/PSP-side React console for folding the digital euro into an existing payment estate: holding-limit &amp; waterfall engine, ISO 20022 settlement over DESP/TARGET, compliance, and a phased roadmap.</p>
+        <p>A bank/PSP-side React console for folding the Digital Euro into an existing payment estate: holding-limit &amp; waterfall engine, ISO 20022 settlement over DESP/TARGET, compliance, and a phased roadmap.</p>
         <div class="pills">
           <span class="pill">React 18</span><span class="pill">ISO 20022</span><span class="pill">78 tests</span><span class="pill">Claude Code</span>
         </div>
@@ -399,7 +409,7 @@
       </div>
       <div class="pbody">
         <h3>Multi-Bank Open Banking TPP</h3>
-        <p>A multi-bank PSD2 aggregator (5 European banks, Berlin Group). A three-tier GenAI categorizer cut unclassified transactions ~80% on an evaluation harness, with an override layer that fixed a real LLM bias bug.</p>
+        <p>A multi-bank PSD2 aggregator connected end to end to 4 European banks over Berlin Group. A three-tier GenAI categorizer cut unclassified transactions ~80% on an evaluation harness, with an override layer that fixed a real LLM bias bug.</p>
         <div class="pills">
           <span class="pill">Python / Flask</span><span class="pill">NextGenPSD2</span><span class="pill">Local LLM</span><span class="pill">Claude Code</span>
         </div>
@@ -466,7 +476,7 @@
       </div>
       <div class="pbody">
         <h3>Open Banking Payment Agent</h3>
-        <p>An agent that initiates account-to-account payments on the TrueLayer sandbox. It checks that the payee name really owns the account before anything moves, and stops for human approval when something looks wrong. The language model advises at the edges and never makes the payment decision. A LangGraph state machine with interrupt-based human-in-the-loop, an external checkpointer so a paused run survives a stateless runtime, and a versioned evaluation suite that asserts the path a run took.</p>
+        <p>An agent that initiates account-to-account payments on the TrueLayer sandbox. It checks that the payee name really owns the account before any money is sent, and stops for human approval when something looks wrong. The LLM advises at the edges and never makes the payment decision. A LangGraph state machine with interrupt-based human-in-the-loop, an external checkpointer so a paused run survives a stateless runtime, and a versioned evaluation suite that asserts the path a run took.</p>
         <div class="pills">
           <span class="pill">LangGraph</span><span class="pill">Human-in-the-loop</span><span class="pill">Evals</span><span class="pill">Claude Code</span>
         </div>
@@ -477,8 +487,44 @@
   </div>
 </div></section>
 
+<!-- WRITING -->
+<section id="writing"><div class="wrap">
+  <div class="sechead">
+    <div class="eyebrow">Writing &amp; interviews</div>
+    <h2>The Digital Euro, read from the bank side</h2>
+  </div>
+  <div class="writelist">
+    <a class="card witem" href="https://www.linkedin.com/pulse/reading-digital-euro-rulebook-v091-ajay-krishna-y21nf" target="_blank" rel="noopener">
+      <span class="wdate">7 Jul 2026 &middot; LinkedIn</span>
+      <span class="wtitle">Reading the Digital Euro rulebook v0.91</span>
+      <span class="wnote">Builds on the PSP Operations Console above, from the holding-limit waterfall to settlement.</span>
+    </a>
+    <a class="card witem" href="https://www.linkedin.com/pulse/digital-euro-pilot-has-36-providers-heres-how-id-place-ajay-krishna-tbhzf" target="_blank" rel="noopener">
+      <span class="wdate">14 Jul 2026 &middot; LinkedIn</span>
+      <span class="wtitle">The Digital Euro pilot has 36 providers. Here's how I'd place each one.</span>
+    </a>
+    <a class="card witem" href="https://www.linkedin.com/pulse/digital-euro-being-designed-never-programmable-money-ajay-krishna-mbnwf" target="_blank" rel="noopener">
+      <span class="wdate">20 Jul 2026 &middot; LinkedIn</span>
+      <span class="wtitle">The Digital Euro is being designed to never be programmable money</span>
+    </a>
+    <a class="card witem" href="https://www.linkedin.com/pulse/digital-euro-accessibility-design-read-delivery-plan-ajay-krishna-a3m1f" target="_blank" rel="noopener">
+      <span class="wdate">30 Jul 2026 &middot; LinkedIn</span>
+      <span class="wtitle">The Digital Euro accessibility design, read as a delivery plan</span>
+    </a>
+    <a class="card witem" href="https://thepaypers.com/regulations/interviews/open-banking-and-the-digital-euro-how-far-does-the-shared-standards-layer-actually-reach" target="_blank" rel="noopener">
+      <span class="wdate">6 Aug 2026 &middot; Interview, The Paypers</span>
+      <span class="wtitle">Open Banking and the Digital Euro: how far does the shared standards layer actually reach?</span>
+      <span class="wnote">Standards reuse, the 2027 pilot, fraud scoring and pricing. Carried in the handpicked headlines of open-conversations.org.</span>
+    </a>
+    <a class="card witem" href="https://www.linkedin.com/pulse/digital-euro-fee-ceiling-what-may-still-charged-ajay-krishna-x8kcf" target="_blank" rel="noopener">
+      <span class="wdate">13 Aug 2026 &middot; LinkedIn</span>
+      <span class="wtitle">The Digital Euro fee ceiling, and what may still be charged</span>
+    </a>
+  </div>
+</div></section>
+
 <!-- EXPERIENCE -->
-<section id="experience"><div class="wrap">
+<section id="experience" class="alt"><div class="wrap">
   <div class="sechead">
     <div class="eyebrow">Experience</div>
     <h2>Top-tier European banks, 2010&ndash;present</h2>
@@ -491,9 +537,13 @@
       <div class="trole">Product Manager, Service Operations (PSD2 / Open Banking)</div>
       <div class="torg">UniCredit</div>
       <ul class="clean">
-        <li><strong>Owned Open Banking service operations across 9 EU markets.</strong></li>
-        <li>Built the Splunk-based Open Banking monitoring framework across those markets that cut <strong>regulatory incidents 99%</strong>, now the bank's standard; automated my own ticket triage with Copilot (<strong>34%</strong> faster).</li>
-        <li><strong>Drove the IT-side response</strong> to the 2024 Hungarian National Bank Open Banking audit, furnishing evidence and drafting answers, surfacing a compliance gap with a remediation plan; no significant findings.</li>
+        <li><strong>Own Open Banking service operations across 9 EU markets:</strong> 600 licensed third-party providers, ~37M API calls a month.</li>
+        <li>Accountable for the PSD2 availability and performance statistics UniCredit publishes quarterly for 10 legal entities. They keep all 9 markets exempt from building a contingency interface.</li>
+        <li>Built the Splunk-based Open Banking monitoring framework across those markets. Regulatory incidents went from <strong>6 in 2021 to 0</strong> after it went live in 2022.</li>
+        <li>Cut run cost in <strong>2 consecutive group cost programmes</strong> while API traffic more than doubled.</li>
+        <li>Rewrote the change-introduction procedure after a provider-facing change: changes that affect providers now get <strong>3 months' notice</strong>.</li>
+        <li>Provide the IT-side input to the PSD3 and PSR feasibility work, and support national-bank Open Banking audits from the IT side with evidence and draft answers.</li>
+        <li>Automated my own ticket triage with Copilot: <strong>34%</strong> faster.</li>
       </ul>
     </div>
 
@@ -503,7 +553,7 @@
       <div class="trole">Senior IT Service Manager &middot; Service Transition Manager</div>
       <div class="torg">Nordea Bank</div>
       <ul class="clean">
-        <li>Held P&amp;L for portfolio products; drove a Time &amp; Material to Managed Services switch and, after recovering the post-cutover breaches, delivered the regulatory-reporting artefacts <strong>36% faster</strong>.</li>
+        <li>Drove a Time &amp; Material to Managed Services switch and, after recovering the post-cutover breaches, delivered the regulatory-reporting artefacts <strong>36% faster</strong>.</li>
         <li>Built the Nordea Service Transition Framework (adopted org-wide); ran 5 large transitions end-to-end.</li>
       </ul>
     </div>
@@ -514,8 +564,8 @@
       <div class="trole">Service Delivery Lead (deployed to GE Capital / Bank BPH)</div>
       <div class="torg">Attra Infotech (customer: GE Capital)</div>
       <ul class="clean">
-        <li>Built a <strong>24&times;7 onsite support operation from zero</strong> for the Postilion card switch, around an <strong>8+ member multicultural team</strong> on the client's site, covering monitoring, health checks, batch runs and major incidents against a two-hour resolution target.</li>
-        <li>Ran the operation on a switch carrying about <strong>800,000 payment authorizations a month</strong>; absorbed <strong>FICO&reg; Falcon&reg;</strong> into the same function when it was added to the contract.</li>
+        <li>Built a <strong>24&times;7 onsite support operation from zero</strong> for the <strong>Postilion&reg;</strong> card switch, around an <strong>8+ member multicultural team</strong> on the client's site, covering monitoring, health checks, batch runs and major incidents against a two-hour resolution target.</li>
+        <li>Ran the operation on <strong>Postilion&reg;</strong>, which carried about <strong>800,000 payment authorizations a month</strong>; absorbed <strong>FICO&reg; Falcon&reg;</strong> into the same function when it was added to the contract.</li>
       </ul>
     </div>
 
@@ -525,7 +575,7 @@
       <div class="trole">Senior Software Engineer, then project lead on scheme-compliance releases</div>
       <div class="torg">Attra Infotech (customer: GE Capital Australia &amp; New Zealand)</div>
       <ul class="clean">
-        <li>Delivered <strong>Mastercard &amp; Visa scheme-compliance releases</strong> on <strong>VisionPLUS&reg;</strong> against dates the schemes set and nobody could move, covering impact analysis, specification, build, test, UAT and go-live on the z/OS mainframe. Clearing-format and <strong>ISO 8583</strong> changes landing on authorization, settlement and interchange.</li>
+        <li>Delivered <strong>Mastercard &amp; Visa scheme-compliance releases</strong> on <strong>VisionPLUS&reg;</strong> against fixed scheme deadlines, covering impact analysis, specification, build, test, UAT and go-live on the z/OS mainframe. The changes covered clearing formats and <strong>ISO 8583</strong> messages across authorization, settlement and interchange.</li>
         <li>Cut the QA batch cycle from <strong>8 hours to 4&ndash;5</strong> by getting artificial job dependencies and recurring environment faults fixed permanently, recovering the testing time the fixed deadlines depended on.</li>
       </ul>
     </div>
@@ -533,7 +583,7 @@
 </div></section>
 
 <!-- SKILLS -->
-<section id="skills" class="alt"><div class="wrap">
+<section id="skills"><div class="wrap">
   <div class="sechead">
     <div class="eyebrow">Skills</div>
     <h2>Where domain, AI, and delivery meet</h2>
@@ -542,17 +592,17 @@
     <div class="card feat">
       <div class="ic">AI</div>
       <h3>AI &amp; technical</h3>
-      <p>GenAI feature design &middot; local LLMs (Ollama, Qwen) &middot; structured output &middot; eval harnesses &middot; React / Python / Flask &middot; SQL &middot; mainframe background.</p>
+      <p>GenAI feature design &middot; LangGraph agents &middot; Langfuse tracing &amp; evaluations &middot; local LLMs (Ollama, Qwen) &middot; structured output &middot; React / Python / Flask &middot; SQL &middot; mainframe background.</p>
     </div>
     <div class="card feat">
       <div class="ic">&euro;</div>
       <h3>Payments &amp; Open Banking</h3>
-      <p>PSD2 (bank- &amp; TPP-side) &middot; Berlin Group / NextGenPSD2 &middot; ISO 20022 &middot; OAuth2 &middot; mTLS &middot; consent &amp; SCA &middot; card-scheme compliance &middot; digital euro.</p>
+      <p>PSD2 (bank- &amp; TPP-side) &middot; PSD3 &amp; PSR &middot; Berlin Group / NextGenPSD2 &middot; ISO 20022 &middot; Verification of Payee &middot; OAuth2 &middot; mTLS &middot; consent &amp; SCA &middot; card-scheme compliance &middot; Digital Euro.</p>
     </div>
     <div class="card feat">
       <div class="ic">&#9881;</div>
       <h3>Operations &amp; governance</h3>
-      <p>ITIL &middot; SLA/KPI frameworks &middot; vendor sourcing &middot; P&amp;L &amp; cost control &middot; service transition &middot; Splunk &middot; ServiceNow &middot; JIRA.</p>
+      <p>ITIL &middot; SLA/KPI frameworks &middot; vendor sourcing &middot; cost control &middot; service transition &middot; EU AI Act &middot; DORA &middot; Splunk (SPL) &middot; ServiceNow &middot; JIRA.</p>
     </div>
   </div>
   <div class="certs">
@@ -568,8 +618,8 @@
 <!-- CONTACT -->
 <section id="contact" class="contact"><div class="wrap">
   <div class="card">
-    <h2>Let's talk banking, payments, and AI products</h2>
-    <p>Based in Munich. Always glad to compare notes on Open Banking, payments infrastructure, and where AI earns its place in regulated operations.</p>
+    <h2>Contact</h2>
+    <p>Munich, Germany. Writing on Open Banking, payments infrastructure, the Digital Euro and AI in regulated operations.</p>
     <div class="links">
       <a class="btn p" href="mailto:ajaykrishna.ptr@gmail.com">ajaykrishna.ptr@gmail.com</a>
       <a class="btn s" href="CV_AjayKrishna.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -606,7 +656,7 @@
   }
 
   // 1. Standard rise reveals (stats, headers, skill cards, certs, contact)
-  ['.stats .stat','.sechead','.grid3 .feat','.certs','.contact .card'].forEach(function(sel){
+  ['.stats .stat','.sechead','.writelist .witem','.grid3 .feat','.certs','.contact .card'].forEach(function(sel){
     var i=0, list=[];
     document.querySelectorAll(sel).forEach(function(el){
       el.classList.add('reveal'); el.style.transitionDelay=(i*120)+'ms'; i++; list.push(el);
